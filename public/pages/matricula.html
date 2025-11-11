@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Wanderley Lopes Batista" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Matrícula - Sistema Acadêmico</title>
+    <link rel="stylesheet" href="../css/estilo.css" />
+  </head>
+
+  <body>
+    <div class="container fade-in">
+      <!-- Cabeçalho -->
+      <header>
+        <h1>📝 Cadastro de Matrícula</h1>
+        <p>Realize a matrícula de alunos em cursos</p>
+      </header>
+
+      <!-- Menu de Navegação -->
+      <nav>
+        <ul class="menu">
+          <li><a href="../index.html">🏠 Início</a></li>
+          <li>
+            <a href="cadastro_aluno.html">👤 Cadastro de Alunos</a>
+          </li>
+          <li>
+            <a href="visualizar_alunos.html">📋 Visualizar Alunos</a>
+          </li>
+          <li>
+            <a href="cadastro_professor.html">👨‍🏫 Cadastro de Professores</a>
+          </li>
+          <li>
+            <a href="visualizar_professores.html">📚 Visualizar Professores</a>
+          </li>
+          <li>
+            <a href="cadastro_curso.html">📚 Cadastro de Cursos</a>
+          </li>
+          <li>
+            <a href="visualizar_cursos.html">📖 Visualizar Cursos</a>
+          </li>
+          <li><a href="matricula.html">📝 Cadastrar Matrícula</a></li>
+          <li>
+            <a href="visualizar_matriculas.html">📊 Visualizar Matrículas</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Conteúdo Principal -->
+      <main>
+        <fieldset>
+          <legend>📝 NOVA MATRÍCULA</legend>
+
+          <form name="formmatricula" method="post" id="form_matricula">
+            <div class="card">
+              <div class="card-header">Dados da Matrícula</div>
+              <div class="form-group">
+                <label for="numero_matricula" class="required"
+                  >Número de Matrícula:</label
+                >
+                <input
+                  type="text"
+                  id="numero_matricula"
+                  name="numero_matricula"
+                  placeholder="Digite o número da matrícula"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="nome_estudante" class="required"
+                  >Nome do Estudante:</label
+                >
+                <input
+                  type="text"
+                  id="nome_estudante"
+                  name="nome_estudante"
+                  placeholder="Digite o nome completo do estudante"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="nome_curso" class="required">Nome do Curso:</label>
+                <input
+                  type="text"
+                  id="nome_curso"
+                  name="nome_curso"
+                  placeholder="Digite o nome do curso"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Botões de Ação -->
+            <div class="button-group">
+              <input type="reset" value="🔄 Limpar" class="btn-secondary" />
+              <input
+                type="submit"
+                value="✅ Confirmar Matrícula"
+                class="btn-primary"
+              />
+            </div>
+          </form>
+        </fieldset>
+      </main>
+
+      <!-- Rodapé -->
+      <footer>
+        <p>
+          <a href="mailto:wanderleylb@gmail.com">Author: Wanderley L. Batista</a
+          ><br />
+          WLB Qualidade & Desenvolvimento LTDA<br />
+          Todos os direitos reservados
+        </p>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../js/bundle.js" defer></script>
+  </body>
+</html>

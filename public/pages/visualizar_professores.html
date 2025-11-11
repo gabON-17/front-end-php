@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Wanderley Lopes Batista" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualizar Professores - Sistema Acadêmico</title>
+    <link rel="stylesheet" href="../css/estilo.css" />
+  </head>
+
+  <body>
+    <div class="container fade-in">
+      <!-- Cabeçalho -->
+      <header>
+        <h1>📚 Visualizar Professores</h1>
+        <p>Lista de todos os professores cadastrados no sistema</p>
+      </header>
+
+      <!-- Menu de Navegação -->
+      <nav>
+        <ul class="menu">
+          <li><a href="../index.html">🏠 Início</a></li>
+          <li>
+            <a href="cadastro_aluno.html">👤 Cadastro de Alunos</a>
+          </li>
+          <li>
+            <a href="visualizar_alunos.html">📋 Visualizar Alunos</a>
+          </li>
+          <li>
+            <a href="cadastro_professor.html">👨‍🏫 Cadastro de Professores</a>
+          </li>
+          <li>
+            <a href="visualizar_professores.html">📚 Visualizar Professores</a>
+          </li>
+          <li>
+            <a href="cadastro_curso.html">📚 Cadastro de Cursos</a>
+          </li>
+          <li>
+            <a href="visualizar_cursos.html">📖 Visualizar Cursos</a>
+          </li>
+          <li><a href="matricula.html">📝 Cadastrar Matrícula</a></li>
+          <li>
+            <a href="visualizar_matriculas.html">📊 Visualizar Matrículas</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Conteúdo Principal -->
+      <main>
+        <fieldset>
+          <legend>📊 LISTA DE PROFESSORES</legend>
+
+          <!-- Barra de Busca e Filtros -->
+          <div class="card">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="busca_professor">Buscar professor:</label>
+                <input
+                  type="text"
+                  id="busca_professor"
+                  name="busca_professor"
+                  placeholder="Digite o nome ou CPF..."
+                />
+              </div>
+              <div
+                class="form-group"
+                style="display: flex; align-items: flex-end"
+              >
+                <button type="button" class="btn-primary">🔍 Buscar</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tabela de Professores -->
+          <div class="card">
+            <div class="card-header">Professores Cadastrados</div>
+            <div style="overflow-x: auto">
+              <table>
+                <thead>
+                  <tr></tr>
+                    <th>Nome</th>
+                    <th>Sexo</th>
+                    <th>CPF</th>
+                    <th>Telefone</th>
+                  </tr>
+                </thead>
+                <tbody id="tabela_professores">
+                  <!-- Exemplo de dados - será preenchido dinamicamente -->
+                  <tr>
+                    <td
+                      colspan="6"
+                      style="
+                        text-align: center;
+                        padding: 2rem;
+                        color: var(--text-secondary);
+                      "
+                    >
+                      Nenhum professor cadastrado ainda.<br />
+                      <a
+                        href="cadastro_professor.html"
+                        style="color: var(--primary-color)"
+                        >Clique aqui para cadastrar o primeiro professor</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Estatísticas -->
+          <div class="grid">
+            <div class="card">
+              <div class="card-header">Total de Professores</div>
+              <div
+                class="card-body"
+                style="
+                  font-size: 2rem;
+                  font-weight: bold;
+                  color: var(--primary-color);
+                  text-align: center;
+                "
+              >
+                <span id="total_professores">0</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="alert alert-info">
+            <strong>ℹ️ Informação:</strong> Os dados são carregados
+            automaticamente. Use a busca para filtrar professores específicos.
+          </div>
+        </fieldset>
+      </main>
+
+      <!-- Rodapé -->
+      <footer>
+        <p>
+          <a href="mailto:wanderleylb@gmail.com">Author: Wanderley L. Batista</a
+          ><br />
+          WLB Qualidade & Desenvolvimento LTDA<br />
+          Todos os direitos reservados
+        </p>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../js/bundle.js" defer></script>
+  </body>
+</html>

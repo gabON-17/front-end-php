@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Wanderley Lopes Batista" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualizar Alunos - Sistema Acadêmico</title>
+    <link rel="stylesheet" href="../css/estilo.css" />
+  </head>
+
+  <body>
+    <div class="container fade-in">
+      <!-- Cabeçalho -->
+      <header>
+        <h1>📋 Visualizar Alunos</h1>
+        <p>Lista de todos os alunos cadastrados no sistema</p>
+      </header>
+
+      <!-- Menu de Navegação -->
+      <nav>
+        <ul class="menu">
+          <li><a href="../index.html">🏠 Início</a></li>
+          <li>
+            <a href="cadastro_aluno.html">👤 Cadastro de Alunos</a>
+          </li>
+          <li>
+            <a href="visualizar_alunos.html">📋 Visualizar Alunos</a>
+          </li>
+          <li>
+            <a href="cadastro_professor.html">👨‍🏫 Cadastro de Professores</a>
+          </li>
+          <li>
+            <a href="visualizar_professores.html">📚 Visualizar Professores</a>
+          </li>
+          <li>
+            <a href="cadastro_curso.html">📚 Cadastro de Cursos</a>
+          </li>
+          <li>
+            <a href="visualizar_cursos.html">📖 Visualizar Cursos</a>
+          </li>
+          <li><a href="matricula.html">📝 Cadastrar Matrícula</a></li>
+          <li>
+            <a href="visualizar_matriculas.html">📊 Visualizar Matrículas</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Conteúdo Principal -->
+      <main>
+        <fieldset>
+          <legend>📊 LISTA DE ALUNOS</legend>
+
+          <!-- Barra de Busca e Filtros -->
+          <div class="card">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="busca_aluno">Buscar aluno:</label>
+                <input
+                  type="text"
+                  id="busca_aluno"
+                  name="busca_aluno"
+                  placeholder="Digite o nome ou CPF..."
+                />
+              </div>
+              <div
+                class="form-group"
+                style="display: flex; align-items: flex-end"
+              >
+                <button type="button" class="btn-primary">🔍 Buscar</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tabela de Alunos -->
+          <div class="card">
+            <div class="card-header">Alunos Cadastrados</div>
+            <div style="overflow-x: auto">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Data Nascimento</th>
+                    <th>Sexo</th>
+                    <th>Cidade</th>
+                    <th>Bairro</th>
+                    <th>CEP</th>
+                    <th>Endereço</th>
+                    <th>Telefone</th>
+                  </tr>
+                </thead>
+                <tbody id="tabela_alunos">
+                  <!-- Exemplo de dados - será preenchido dinamicamente -->
+                  <tr>
+                    <td
+                      colspan="8"
+                      style="
+                        text-align: center;
+                        padding: 2rem;
+                        color: var(--text-secondary);
+                      "
+                    >
+                      Nenhum aluno cadastrado ainda.<br />
+                      <a
+                        href="cadastro_aluno.html"
+                        style="color: var(--primary-color)"
+                        >Clique aqui para cadastrar o primeiro aluno</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Estatísticas -->
+          <div class="grid">
+            <div class="card">
+              <div class="card-header">Total de Alunos</div>
+              <div
+                class="card-body"
+                style="
+                  font-size: 2rem;
+                  font-weight: bold;
+                  color: var(--primary-color);
+                  text-align: center;
+                "
+              >
+                <span id="total_alunos">0</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="alert alert-info">
+            <strong>ℹ️ Informação:</strong> Os dados são carregados
+            automaticamente. Use a busca para filtrar alunos específicos.
+          </div>
+        </fieldset>
+      </main>
+
+      <!-- Rodapé -->
+      <footer>
+        <p>
+          <a href="mailto:wanderleylb@gmail.com">Author: Wanderley L. Batista</a
+          ><br />
+          WLB Qualidade & Desenvolvimento LTDA<br />
+          Todos os direitos reservados
+        </p>
+      </footer>
+    </div>
+    <script src="../js/bundle.js"></script>
+  </body>
+</html>
