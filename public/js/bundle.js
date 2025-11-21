@@ -209,6 +209,20 @@ function executeValidationCourse() {
 
 /***/ }),
 
+/***/ "./src/js/quiz/quiz.js":
+/*!*****************************!*\
+  !*** ./src/js/quiz/quiz.js ***!
+  \*****************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   response: () => (/* binding */ response)
+/* harmony export */ });
+var response = document.getElementsByName("questao2");
+
+/***/ }),
+
 /***/ "./src/js/student/students.create.js":
 /*!*******************************************!*\
   !*** ./src/js/student/students.create.js ***!
@@ -620,8 +634,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_courses_courses_validate_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/courses/courses.validate.js */ "./src/js/courses/courses.validate.js");
 /* harmony import */ var _js_courses_courses_create_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./js/courses/courses.create.js */ "./src/js/courses/courses.create.js");
 /* harmony import */ var _js_courses_courses_get_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./js/courses/courses.get.js */ "./src/js/courses/courses.get.js");
-/* harmony import */ var _js_teacher_teacher_validate_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./js/teacher/teacher.validate.js */ "./src/js/teacher/teacher.validate.js");
-/* harmony import */ var _js_student_students_validate_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./js/student/students.validate.js */ "./src/js/student/students.validate.js");
+/* harmony import */ var _js_quiz_quiz_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./js/quiz/quiz.js */ "./src/js/quiz/quiz.js");
+/* harmony import */ var _js_teacher_teacher_validate_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./js/teacher/teacher.validate.js */ "./src/js/teacher/teacher.validate.js");
+/* harmony import */ var _js_student_students_validate_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./js/student/students.validate.js */ "./src/js/student/students.validate.js");
 function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
@@ -639,9 +654,10 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 
 
+
 // ALUNOS
 if (window.location.href === "http://127.0.0.1:5500/public/pages/cadastro_aluno.html") {
-  (0,_js_student_students_validate_js__WEBPACK_IMPORTED_MODULE_8__.executeValidation)();
+  (0,_js_student_students_validate_js__WEBPACK_IMPORTED_MODULE_9__.executeValidation)();
   var form = document.getElementById("form_student");
   form.addEventListener("submit", /*#__PURE__*/function () {
     var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee(e) {
@@ -650,7 +666,7 @@ if (window.location.href === "http://127.0.0.1:5500/public/pages/cadastro_aluno.
         while (1) switch (_context.n) {
           case 0:
             e.preventDefault();
-            (0,_js_student_students_validate_js__WEBPACK_IMPORTED_MODULE_8__.testa_form)();
+            (0,_js_student_students_validate_js__WEBPACK_IMPORTED_MODULE_9__.testa_form)();
             _context.n = 1;
             return (0,_js_student_students_create_js__WEBPACK_IMPORTED_MODULE_0__.createStudent)();
           case 1:
@@ -716,7 +732,7 @@ if (window.location.href === "http://127.0.0.1:5500/public/pages/visualizar_alun
 // PROFESSOR
 if (window.location.href === "http://127.0.0.1:5500/public/pages/cadastro_professor.html") {
   var _form = document.getElementById("form_professor");
-  (0,_js_teacher_teacher_validate_js__WEBPACK_IMPORTED_MODULE_7__.executeValidationTeacher)();
+  (0,_js_teacher_teacher_validate_js__WEBPACK_IMPORTED_MODULE_8__.executeValidationTeacher)();
   _form.addEventListener("submit", /*#__PURE__*/function () {
     var _ref3 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee3(e) {
       var response;
@@ -724,7 +740,7 @@ if (window.location.href === "http://127.0.0.1:5500/public/pages/cadastro_profes
         while (1) switch (_context3.n) {
           case 0:
             e.preventDefault();
-            (0,_js_teacher_teacher_validate_js__WEBPACK_IMPORTED_MODULE_7__.testa_form_professor)();
+            (0,_js_teacher_teacher_validate_js__WEBPACK_IMPORTED_MODULE_8__.testa_form_professor)();
             _context3.n = 1;
             return (0,_js_teacher_teachers_create_js__WEBPACK_IMPORTED_MODULE_2__.createTeacher)();
           case 1:
@@ -887,6 +903,13 @@ if (window.location.href === "http://127.0.0.1:5500/public/pages/visualizar_curs
     };
   }());
 }
+console.log(_js_quiz_quiz_js__WEBPACK_IMPORTED_MODULE_7__.response[0]);
+document.addEventListener("click", function (e) {
+  var resposta = _js_quiz_quiz_js__WEBPACK_IMPORTED_MODULE_7__.response.forEach(function (value) {
+    if (value == e.target) return e.target;
+    console.log(value);
+  });
+});
 })();
 
 /******/ })()

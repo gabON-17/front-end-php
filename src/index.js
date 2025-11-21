@@ -6,6 +6,8 @@ import { executeValidationCourse } from "./js/courses/courses.validate.js";
 import { createCourse } from "./js/courses/courses.create.js";
 import { getCourses } from "./js/courses/courses.get.js";
 
+import { response } from "./js/quiz/quiz.js";
+
 import {
   testa_form_professor,
   executeValidationTeacher,
@@ -155,3 +157,10 @@ if (
     return;
   });
 }
+console.log(response[0]);
+document.addEventListener("click", (e) => {
+  const resposta = response.forEach((value) => {
+    if (value == e.target) return e.target;
+    console.log(value);
+  });
+});

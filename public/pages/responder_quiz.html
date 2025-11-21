@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Wanderley Lopes Batista" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responder Quiz - Sistema Acadêmico</title>
+    <link rel="stylesheet" href="../css/estilo.css" />
+  </head>
+
+  <body>
+    <div class="container fade-in">
+      <!-- Cabeçalho -->
+      <header>
+        <h1>📝 Responder Quiz</h1>
+        <p>Responda as questões abaixo com atenção</p>
+      </header>
+
+      <!-- Menu de Navegação -->
+      <nav>
+        <ul class="menu">
+          <li><a href="../index.html">🏠 Início</a></li>
+          <li>
+            <a href="cadastro_aluno.html">👤 Cadastro de Alunos</a>
+          </li>
+          <li>
+            <a href="visualizar_alunos.html">📋 Visualizar Alunos</a>
+          </li>
+          <li>
+            <a href="cadastro_professor.html">👨‍🏫 Cadastro de Professores</a>
+          </li>
+          <li>
+            <a href="visualizar_professores.html">📚 Visualizar Professores</a>
+          </li>
+          <li>
+            <a href="cadastro_curso.html">📚 Cadastro de Cursos</a>
+          </li>
+          <li>
+            <a href="visualizar_cursos.html">📖 Visualizar Cursos</a>
+          </li>
+          <li><a href="matricula.html">📝 Cadastrar Matrícula</a></li>
+          <li>
+            <a href="visualizar_matriculas.html">📊 Visualizar Matrículas</a>
+          </li>
+          <li>
+            <a href="responder_quiz.html">📝 Responder Quiz</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Formulário do Quiz -->
+      <main>
+        <fieldset>
+          <legend>📋 QUESTÕES DO QUIZ</legend>
+
+          <form name="formquiz" method="post" id="form_quiz">
+            <div class="card">
+              <!-- QUESTION 1 -->
+              <div class="card-header">Questão 1</div>
+              <div class="form-group">
+                <label class="required">
+                  Qual é a linguagem de programação mais usada para
+                  desenvolvimento web frontend?
+                </label>
+                <div class="radio-group">
+                  <label>
+                    <input type="radio" name="questao1" value="a" required />
+                    A) Python
+                  </label>
+                  <label>
+                    <input type="radio" name="questao1" value="b" />
+                    B) JavaScript
+                  </label>
+                  <label>
+                    <input type="radio" name="questao1" value="c" />
+                    C) Java
+                  </label>
+                  <label>
+                    <input type="radio" name="questao1" value="d" />
+                    D) C++
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Questão 2 -->
+            <div class="card">
+              <div class="card-header">Questão 2</div>
+              <div class="form-group">
+                <label class="required"> O que significa a sigla HTML? </label>
+                <div class="radio-group">
+                  <label>
+                    <input type="radio" name="questao2" value="a" required />
+                    A) HyperText Markup Language
+                  </label>
+                  <label>
+                    <input type="radio" name="questao2" value="b" />
+                    B) High Tech Modern Language
+                  </label>
+                  <label>
+                    <input type="radio" name="questao2" value="c" />
+                    C) Home Tool Markup Language
+                  </label>
+                  <label>
+                    <input type="radio" name="questao2" value="d" />
+                    D) Hyperlink Text Markup Language
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Questão 3 -->
+            <div class="card">
+              <div class="card-header">Questão 3</div>
+              <div class="form-group">
+                <label class="required">
+                  Qual propriedade CSS é usada para alterar a cor do texto?
+                </label>
+                <div class="radio-group">
+                  <label>
+                    <input type="radio" name="questao3" value="a" required />
+                    A) text-color
+                  </label>
+                  <label>
+                    <input type="radio" name="questao3" value="b" />
+                    B) font-color
+                  </label>
+                  <label>
+                    <input type="radio" name="questao3" value="c" />
+                    C) color
+                  </label>
+                  <label>
+                    <input type="radio" name="questao3" value="d" />
+                    D) text-style
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Questão 4 -->
+            <div class="card">
+              <div class="card-header">Questão 4</div>
+              <div class="form-group">
+                <label class="required">
+                  Qual método HTTP é usado para enviar dados ao servidor?
+                </label>
+                <div class="radio-group">
+                  <label>
+                    <input type="radio" name="questao4" value="a" required />
+                    A) GET
+                  </label>
+                  <label>
+                    <input type="radio" name="questao4" value="b" />
+                    B) POST
+                  </label>
+                  <label>
+                    <input type="radio" name="questao4" value="c" />
+                    C) PUT
+                  </label>
+                  <label>
+                    <input type="radio" name="questao4" value="d" />
+                    D) DELETE
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Questão 5 -->
+            <div class="card">
+              <div class="card-header">Questão 5</div>
+              <div class="form-group">
+                <label class="required">
+                  O que é um banco de dados relacional?
+                </label>
+                <div class="radio-group">
+                  <label>
+                    <input type="radio" name="questao5" value="a" required />
+                    A) Um banco que armazena dados em formato JSON
+                  </label>
+                  <label>
+                    <input type="radio" name="questao5" value="b" />
+                    B) Um banco que organiza dados em tabelas relacionadas
+                  </label>
+                  <label>
+                    <input type="radio" name="questao5" value="c" />
+                    C) Um banco que não precisa de conexão
+                  </label>
+                  <label>
+                    <input type="radio" name="questao5" value="d" />
+                    D) Um banco que armazena apenas imagens
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Questão 6 (Múltipla Escolha com Checkbox) -->
+            <div class="card">
+              <div class="card-header">Questão 6</div>
+              <div class="form-group">
+                <label class="required">
+                  Quais são frameworks JavaScript? (Selecione todas as opções
+                  corretas)
+                </label>
+                <div class="radio-group">
+                  <label>
+                    <input type="checkbox" name="questao6" value="react" />
+                    React
+                  </label>
+                  <label>
+                    <input type="checkbox" name="questao6" value="vue" />
+                    Vue.js
+                  </label>
+                  <label>
+                    <input type="checkbox" name="questao6" value="angular" />
+                    Angular
+                  </label>
+                  <label>
+                    <input type="checkbox" name="questao6" value="python" />
+                    Python
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Questão 7 (Texto Livre) -->
+            <div class="card">
+              <div class="card-header">Questão 7</div>
+              <div class="form-group">
+                <label for="questao7" class="required">
+                  Explique brevemente o que é uma API REST:
+                </label>
+                <textarea
+                  id="questao7"
+                  name="questao7"
+                  rows="4"
+                  placeholder="Digite sua resposta aqui..."
+                  required
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- Botões de Ação -->
+            <div class="button-group">
+              <input
+                type="reset"
+                value="🔄 Limpar Respostas"
+                class="btn-secondary"
+              />
+              <input type="submit" value="✅ Enviar Quiz" class="btn-primary" />
+            </div>
+          </form>
+        </fieldset>
+      </main>
+
+      <!-- Rodapé -->
+      <footer>
+        <p>
+          <a href="mailto:wanderleylb@gmail.com">Author: Wanderley L. Batista</a
+          ><br />
+          WLB Qualidade & Desenvolvimento LTDA<br />
+          Todos os direitos reservados
+        </p>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../js/bundle.js" defer></script>
+  </body>
+</html>
