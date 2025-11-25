@@ -157,10 +157,10 @@ if (
     return;
   });
 }
-console.log(response[0]);
-document.addEventListener("click", (e) => {
-  const resposta = response.forEach((value) => {
-    if (value == e.target) return e.target;
-    console.log(value);
-  });
-});
+
+// document.addEventListener("click", (e) => {
+//   const resposta = response.forEach((value) => {
+//     if (value == e.target) return e.target;
+//     console.log(value);
+//   });
+// });

@@ -209,6 +209,101 @@ function executeValidationCourse() {
 
 /***/ }),
 
+/***/ "./src/js/quiz/getResponse.js":
+/*!************************************!*\
+  !*** ./src/js/quiz/getResponse.js ***!
+  \************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getResponse: () => (/* binding */ getResponse)
+/* harmony export */ });
+function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function getResponse() {
+  var radios = document.getElementsByName("response");
+  var valor;
+  var _iterator = _createForOfIteratorHelper(radios),
+    _step;
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var radio = _step.value;
+      if (radio.checked) {
+        valor = radio.value;
+        break;
+      }
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+  if (!valor) return false;
+  return valor;
+}
+
+/***/ }),
+
+/***/ "./src/js/quiz/questions.js":
+/*!**********************************!*\
+  !*** ./src/js/quiz/questions.js ***!
+  \**********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   quizquetionsIA: () => (/* binding */ quizquetionsIA)
+/* harmony export */ });
+var quizquetionsIA = [{
+  quetion: "Qual teste clássico é usado para avaliar a capacidade de uma máquina exibir comportamento inteligente indistinguível de um ser humano?",
+  responses: ["O Teste de Turing", "O Teste de Bechdel", "O Teste de Milgram", "O Teste de Rorschach"],
+  correctResponse: "O Teste de Turing"
+}, {
+  quetion: "O que significa a sigla 'NLP' no contexto de IA?",
+  responses: ["Neural Logic Protocol (Protocolo de Lógica Neural)", "Natural Language Processing (Processamento de Linguagem Natural)", "Network Learning Program (Programa de Aprendizado de Rede)", "New Language Paradigm (Novo Paradigma de Linguagem)"],
+  correctResponse: "Natural Language Processing (Processamento de Linguagem Natural)"
+}, {
+  quetion: "Qual subcampo da IA foca no uso de redes neurais com múltiplas camadas para aprender padrões complexos?",
+  responses: ["Algoritmos Genéticos", "Lógica Fuzzy", "Deep Learning (Aprendizado Profundo)", "Sistemas Especialistas"],
+  correctResponse: "Deep Learning (Aprendizado Profundo)"
+}, {
+  quetion: "No Machine Learning, como é chamado o tipo de aprendizado onde o modelo treina com dados que *não* possuem rótulos ou responses corretas?",
+  responses: ["Aprendizado Supervisionado", "Aprendizado por Reforço", "Aprendizado Não Supervisionado", "Aprendizado Semi-Supervisionado"],
+  correctResponse: "Aprendizado Não Supervisionado"
+}, {
+  quetion: "Qual é o objetivo da 'Visão Computacional' (Computer Vision)?",
+  responses: ["Permitir que computadores 'vejam' e interpretem dados visuais (imagens e vídeos)", "Melhorar a velocidade de renderização de gráficos 3D", "Criar interfaces de usuário mais bonitas", "Processar e entender o áudio de vídeos"],
+  correctResponse: "Permitir que computadores 'vejam' e interpretem dados visuais (imagens e vídeos)"
+}, {
+  quetion: "O que é 'Overfitting' em Machine Learning?",
+  responses: ["Quando o modelo é muito simples e não aprende nada", "Quando o modelo aprende o ruído dos dados de treino e generaliza mal para novos dados", "O processo de adicionar mais camadas a uma rede neural", "Quando o modelo demora muito para treinar"],
+  correctResponse: "Quando o modelo aprende o ruído dos dados de treino e generaliza mal para novos dados"
+}, {
+  quetion: "Qual IA, desenvolvida pela DeepMind (Google), derrotou o campeão mundial de Go, Lee Sedol, em 2016?",
+  responses: ["Watson (IBM)", "ChatGPT (OpenAI)", "Deep Blue (IBM)", "AlphaGo"],
+  correctResponse: "AlphaGo"
+}, {
+  quetion: "Como é chamada uma IA que possui a capacidade intelectual e cognitiva de um ser humano, podendo realizar qualquer tarefa que um humano pode? (Atualmente teórica)",
+  responses: ["ANI (Artificial Narrow Intelligence) - IA Fraca", "AGI (Artificial General Intelligence) - IA Forte", "ASI (Artificial Superintelligence) - Superinteligência", "IA Reativa"],
+  correctResponse: "AGI (Artificial General Intelligence) - IA Forte"
+}, {
+  quetion: "O aprendizado por reforço (Reinforcement Learning) é baseado principalmente em qual conceito?",
+  responses: ["Rótulos de dados", "Agrupamento de dados", "Um sistema de recompensas e punições", "Imitação de exemplos"],
+  correctResponse: "Um sistema de recompensas e punições"
+}, {
+  quetion: "Quem é frequentemente considerado um dos 'padrinhos' da IA e do Deep Learning por seu trabalho pioneiro em redes neurais?",
+  responses: ["Alan Turing", "Geoffrey Hinton", "Tim Berners-Lee", "Bill Gates"],
+  correctResponse: "Geoffrey Hinton"
+}];
+
+// Exemplo de como usar:
+// console.log(quizquetionsIA[0].quetion);
+// console.log(quizquetionsIA[0].responsescorrectResponse
+
+/***/ }),
+
 /***/ "./src/js/quiz/quiz.js":
 /*!*****************************!*\
   !*** ./src/js/quiz/quiz.js ***!
@@ -216,10 +311,39 @@ function executeValidationCourse() {
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   response: () => (/* binding */ response)
-/* harmony export */ });
-var response = document.getElementsByName("questao2");
+/* harmony import */ var _getResponse_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getResponse.js */ "./src/js/quiz/getResponse.js");
+/* harmony import */ var _questions_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./questions.js */ "./src/js/quiz/questions.js");
+
+
+var questionHeader = document.getElementsByName("header-quiz")[0];
+var questionText = document.getElementById("question");
+var responsesInput = document.getElementsByName("labelResponse");
+var formQuiz = document.getElementById("form_quiz");
+var button = document.getElementsByClassName("btn-primary")[0];
+var question = 0;
+var resClient = [];
+document.addEventListener("DOMContentLoaded", function (e) {
+  questionHeader.textContent = "Questão 1";
+  questionText.textContent = _questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[0].quetion;
+  for (var i = 0; i < 4; i++) {
+    responsesInput[i].innerHTML = "<input type='radio' name='response' class='required' value='".concat(_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].responses[i], "' /> ") + _questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].responses[i] + "<br>";
+  }
+});
+formQuiz.addEventListener("submit", function (e) {
+  e.preventDefault();
+  var response = (0,_getResponse_js__WEBPACK_IMPORTED_MODULE_0__.getResponse)();
+  resClient.push(response);
+  if (question < 9) question++;
+  if (question === 9) {
+    button.value = "✅ Enviar";
+  }
+  questionHeader.textContent = "Quest\xE3o ".concat(question + 1);
+  questionText.textContent = _questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].quetion;
+  for (var i = 0; i < 4; i++) {
+    responsesInput[i].innerHTML = "<input type='radio' name='response' class='required' value='".concat(_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].responses[i], "' /> ") + _questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].responses[i] + "<br>";
+  }
+  console.log(resClient);
+});
 
 /***/ }),
 
@@ -903,13 +1027,13 @@ if (window.location.href === "http://127.0.0.1:5500/public/pages/visualizar_curs
     };
   }());
 }
-console.log(_js_quiz_quiz_js__WEBPACK_IMPORTED_MODULE_7__.response[0]);
-document.addEventListener("click", function (e) {
-  var resposta = _js_quiz_quiz_js__WEBPACK_IMPORTED_MODULE_7__.response.forEach(function (value) {
-    if (value == e.target) return e.target;
-    console.log(value);
-  });
-});
+
+// document.addEventListener("click", (e) => {
+//   const resposta = response.forEach((value) => {
+//     if (value == e.target) return e.target;
+//     console.log(value);
+//   });
+// });
 })();
 
 /******/ })()

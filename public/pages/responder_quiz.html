@@ -53,32 +53,17 @@
         <fieldset>
           <legend>📋 QUESTÕES DO QUIZ</legend>
 
-          <form name="formquiz" method="post" id="form_quiz">
+          <form name="formquiz" method="get" id="form_quiz">
             <div class="card">
               <!-- QUESTION 1 -->
-              <div class="card-header">Questão 1</div>
+              <div class="card-header" name="header-quiz"></div>
               <div class="form-group">
-                <label class="required">
-                  Qual é a linguagem de programação mais usada para
-                  desenvolvimento web frontend?
-                </label>
+                <label class="required" id="question"> </label>
                 <div class="radio-group">
-                  <label>
-                    <input type="radio" name="questao1" value="a" required />
-                    A) Python
-                  </label>
-                  <label>
-                    <input type="radio" name="questao1" value="b" />
-                    B) JavaScript
-                  </label>
-                  <label>
-                    <input type="radio" name="questao1" value="c" />
-                    C) Java
-                  </label>
-                  <label>
-                    <input type="radio" name="questao1" value="d" />
-                    D) C++
-                  </label>
+                  <label name="labelResponse"> </label>
+                  <label name="labelResponse"> </label>
+                  <label name="labelResponse"> </label>
+                  <label name="labelResponse"> </label>
                 </div>
               </div>
             </div>
