@@ -209,10 +209,55 @@ function executeValidationCourse() {
 
 /***/ }),
 
-/***/ "./src/js/quiz/getResponse.js":
-/*!************************************!*\
-  !*** ./src/js/quiz/getResponse.js ***!
-  \************************************/
+/***/ "./src/js/quiz/quiz.js":
+/*!*****************************!*\
+  !*** ./src/js/quiz/quiz.js ***!
+  \*****************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   resClient: () => (/* binding */ resClient)
+/* harmony export */ });
+/* harmony import */ var _utils_getResponse_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/getResponse.js */ "./src/js/quiz/utils/getResponse.js");
+/* harmony import */ var _utils_questions_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/questions.js */ "./src/js/quiz/utils/questions.js");
+
+
+var questionHeader = document.getElementsByName("header-quiz")[0];
+var questionText = document.getElementById("question");
+var responsesInput = document.getElementsByName("labelResponse");
+var formQuiz = document.getElementById("form_quiz");
+var button = document.getElementsByClassName("btn-primary")[0];
+var question = 0;
+var resClient = [];
+document.addEventListener("DOMContentLoaded", function (e) {
+  questionHeader.textContent = "Questão 1";
+  questionText.textContent = _utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[0].quetion;
+  for (var i = 0; i < 4; i++) {
+    responsesInput[i].innerHTML = "<input type='radio' name='response' class='required' value='".concat(_utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].responses[i], "' /> ") + _utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].responses[i] + "<br>";
+  }
+});
+formQuiz.addEventListener("submit", function (e) {
+  e.preventDefault();
+  var response = (0,_utils_getResponse_js__WEBPACK_IMPORTED_MODULE_0__.getResponse)();
+  resClient.push(response);
+  if (question <= 9) question++;
+  if (question === 9) {
+    button.value = "✅ Enviar";
+  } else if (question === 10) {}
+  questionHeader.textContent = "Quest\xE3o ".concat(question + 1);
+  questionText.textContent = _utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].quetion;
+  for (var i = 0; i < 4; i++) {
+    responsesInput[i].innerHTML = "<input type='radio' name='response' class='required' value='".concat(_utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].responses[i], "' /> ") + _utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].responses[i] + "<br>";
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/quiz/utils/getResponse.js":
+/*!******************************************!*\
+  !*** ./src/js/quiz/utils/getResponse.js ***!
+  \******************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -246,10 +291,10 @@ function getResponse() {
 
 /***/ }),
 
-/***/ "./src/js/quiz/questions.js":
-/*!**********************************!*\
-  !*** ./src/js/quiz/questions.js ***!
-  \**********************************/
+/***/ "./src/js/quiz/utils/questions.js":
+/*!****************************************!*\
+  !*** ./src/js/quiz/utils/questions.js ***!
+  \****************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -301,49 +346,6 @@ var quizquetionsIA = [{
 // Exemplo de como usar:
 // console.log(quizquetionsIA[0].quetion);
 // console.log(quizquetionsIA[0].responsescorrectResponse
-
-/***/ }),
-
-/***/ "./src/js/quiz/quiz.js":
-/*!*****************************!*\
-  !*** ./src/js/quiz/quiz.js ***!
-  \*****************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _getResponse_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getResponse.js */ "./src/js/quiz/getResponse.js");
-/* harmony import */ var _questions_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./questions.js */ "./src/js/quiz/questions.js");
-
-
-var questionHeader = document.getElementsByName("header-quiz")[0];
-var questionText = document.getElementById("question");
-var responsesInput = document.getElementsByName("labelResponse");
-var formQuiz = document.getElementById("form_quiz");
-var button = document.getElementsByClassName("btn-primary")[0];
-var question = 0;
-var resClient = [];
-document.addEventListener("DOMContentLoaded", function (e) {
-  questionHeader.textContent = "Questão 1";
-  questionText.textContent = _questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[0].quetion;
-  for (var i = 0; i < 4; i++) {
-    responsesInput[i].innerHTML = "<input type='radio' name='response' class='required' value='".concat(_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].responses[i], "' /> ") + _questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].responses[i] + "<br>";
-  }
-});
-formQuiz.addEventListener("submit", function (e) {
-  e.preventDefault();
-  var response = (0,_getResponse_js__WEBPACK_IMPORTED_MODULE_0__.getResponse)();
-  resClient.push(response);
-  if (question < 9) question++;
-  if (question === 9) {
-    button.value = "✅ Enviar";
-  }
-  questionHeader.textContent = "Quest\xE3o ".concat(question + 1);
-  questionText.textContent = _questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].quetion;
-  for (var i = 0; i < 4; i++) {
-    responsesInput[i].innerHTML = "<input type='radio' name='response' class='required' value='".concat(_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].responses[i], "' /> ") + _questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].responses[i] + "<br>";
-  }
-  console.log(resClient);
-});
 
 /***/ }),
 
