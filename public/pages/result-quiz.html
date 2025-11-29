@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resultado do Quiz</title>
+    <link rel="stylesheet" href="../css/quizResult.css" />
+  </head>
+  <body class="main">
+    <div class="container-result">
+      <h1 class="h1-result">Resultado do Quiz</h1>
+
+      <div class="results-container">
+        <div class="result-card acertos">
+          <h2>Acertos</h2>
+          <span class="number" id="acertos">0</span>
+          <span class="label">Questões Corretas</span>
+        </div>
+
+        <div class="result-card erros">
+          <h2>Erros</h2>
+          <span class="number" id="erros">0</span>
+          <span class="label">Questões Incorretas</span>
+        </div>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress-label">
+          <span>Sua Performance</span>
+          <span id="percentual">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill" style="width: 80%"></div>
+        </div>
+      </div>
+
+      <div class="summary">
+        <p><strong>Total de Questões:</strong> <span id="total">10</span></p>
+        <p><strong>Taxa de Acerto:</strong> <span id="taxa">0%</span></p>
+        <p><strong>Situação:</strong> <span id="situacao"></span></p>
+      </div>
+    </div>
+  </body>
+</html>
