@@ -4,16 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="author" content="Wanderley Lopes Batista" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastro de Matrícula - Sistema Acadêmico</title>
+    <title>Responder Quiz - Sistema Acadêmico</title>
     <link rel="stylesheet" href="../css/estilo.css" />
+    <link rel="stylesheet" href="../css/quizResult.css" />
   </head>
 
   <body>
     <div class="container fade-in">
       <!-- Cabeçalho -->
       <header>
-        <h1>📝 Cadastro de Matrícula</h1>
-        <p>Realize a matrícula de alunos em cursos</p>
+        <h1>📝 Responder Quiz</h1>
+        <p>Responda as questões abaixo com atenção</p>
       </header>
 
       <!-- Menu de Navegação -->
@@ -48,60 +49,28 @@
         </ul>
       </nav>
 
-      <!-- Conteúdo Principal -->
-      <main>
+      <!-- Formulário do Quiz -->
+      <main id="body_quiz">
         <fieldset>
-          <legend>📝 NOVA MATRÍCULA</legend>
+          <legend>📋 QUESTÕES DO QUIZ</legend>
 
-          <form name="formmatricula" method="post" id="form_matricula">
+          <form name="formquiz" method="get" id="form_quiz">
             <div class="card">
-              <div class="card-header">Dados da Matrícula</div>
+              <!-- QUESTION 1 -->
+              <div class="card-header" name="header-quiz"></div>
               <div class="form-group">
-                <label for="numero_matricula" class="required"
-                  >Número de Matrícula:</label
-                >
-                <input
-                  type="text"
-                  id="numero_matricula"
-                  name="numero_matricula"
-                  placeholder="Digite o número da matrícula"
-                  required
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="nome_estudante" class="required"
-                  >Nome do Estudante:</label
-                >
-                <input
-                  type="text"
-                  id="nome_estudante"
-                  name="nome_estudante"
-                  placeholder="Digite o nome completo do estudante"
-                  required
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="nome_curso" class="required">Nome do Curso:</label>
-                <input
-                  type="text"
-                  id="nome_curso"
-                  name="nome_curso"
-                  placeholder="Digite o nome do curso"
-                  required
-                />
+                <label class="required" id="question"> </label>
+                <div class="radio-group">
+                  <label name="labelResponse"> </label>
+                  <label name="labelResponse"> </label>
+                  <label name="labelResponse"> </label>
+                  <label name="labelResponse"> </label>
+                </div>
               </div>
             </div>
-
             <!-- Botões de Ação -->
             <div class="button-group">
-              <input type="reset" value="🔄 Limpar" class="btn-secondary" />
-              <input
-                type="submit"
-                value="✅ Confirmar Matrícula"
-                class="btn-primary"
-              />
+              <input type="submit" value="-> Próxima" class="btn-primary" />
             </div>
           </form>
         </fieldset>
@@ -117,7 +86,6 @@
         </p>
       </footer>
     </div>
-
     <script type="text/javascript" src="../js/bundle.js" defer></script>
   </body>
 </html>
