@@ -216,11 +216,10 @@ function executeValidationCourse() {
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   resClient: () => (/* binding */ resClient)
-/* harmony export */ });
 /* harmony import */ var _utils_getResponse_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/getResponse.js */ "./src/js/quiz/utils/getResponse.js");
 /* harmony import */ var _utils_questions_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/questions.js */ "./src/js/quiz/utils/questions.js");
+/* harmony import */ var _utils_renderResult_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/renderResult.js */ "./src/js/quiz/utils/renderResult.js");
+
 
 
 var questionHeader = document.getElementsByName("header-quiz")[0];
@@ -239,12 +238,15 @@ document.addEventListener("DOMContentLoaded", function (e) {
 });
 formQuiz.addEventListener("submit", function (e) {
   e.preventDefault();
-  var response = (0,_utils_getResponse_js__WEBPACK_IMPORTED_MODULE_0__.getResponse)();
+  question++;
+  var response = (0,_utils_getResponse_js__WEBPACK_IMPORTED_MODULE_0__.getResponse)(_utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question - 1].correctResponse);
   resClient.push(response);
-  if (question <= 9) question++;
-  if (question === 9) {
+  if (question == 9) {
     button.value = "✅ Enviar";
-  } else if (question === 10) {}
+  } else if (question >= 10) {
+    question--;
+    (0,_utils_renderResult_js__WEBPACK_IMPORTED_MODULE_2__.renderResult)(resClient, document.getElementById("body_quiz"));
+  }
   questionHeader.textContent = "Quest\xE3o ".concat(question + 1);
   questionText.textContent = _utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].quetion;
   for (var i = 0; i < 4; i++) {
@@ -267,7 +269,7 @@ __webpack_require__.r(__webpack_exports__);
 function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
-function getResponse() {
+function getResponse(correctResponse) {
   var radios = document.getElementsByName("response");
   var valor;
   var _iterator = _createForOfIteratorHelper(radios),
@@ -277,7 +279,7 @@ function getResponse() {
       var radio = _step.value;
       if (radio.checked) {
         valor = radio.value;
-        break;
+        return valor === correctResponse;
       }
     }
   } catch (err) {
@@ -285,8 +287,7 @@ function getResponse() {
   } finally {
     _iterator.f();
   }
-  if (!valor) return false;
-  return valor;
+  return false;
 }
 
 /***/ }),
@@ -346,6 +347,49 @@ var quizquetionsIA = [{
 // Exemplo de como usar:
 // console.log(quizquetionsIA[0].quetion);
 // console.log(quizquetionsIA[0].responsescorrectResponse
+
+/***/ }),
+
+/***/ "./src/js/quiz/utils/renderResult.js":
+/*!*******************************************!*\
+  !*** ./src/js/quiz/utils/renderResult.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   renderResult: () => (/* binding */ renderResult)
+/* harmony export */ });
+/* harmony import */ var _questions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./questions.js */ "./src/js/quiz/utils/questions.js");
+function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+
+function renderResult(resClient, body) {
+  var acerts = 0;
+  var _iterator = _createForOfIteratorHelper(resClient),
+    _step;
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var value = _step.value;
+      if (value) acerts++;
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+  var errors = _questions_js__WEBPACK_IMPORTED_MODULE_0__.quizquetionsIA.length - acerts;
+  var percentage = Math.round(acerts / _questions_js__WEBPACK_IMPORTED_MODULE_0__.quizquetionsIA.length * 100);
+  body.classList.add("main");
+  body.innerHTML = "    <div class=\"container-result\">\n      <h1>Resultado do Quiz</h1>\n\n      <div class=\"results-container\">\n        <div class=\"result-card acertos\">\n          <h2 \n            style=\"background: linear-gradient(135deg, #27ae60 0%, #229954 100%);\"\n          >Acertos</h2>\n          <span class=\"number\" id=\"acertos\">0</span>\n          <span class=\"label\">Quest\xF5es Corretas</span>\n        </div>\n\n        <div class=\"result-card erros\">\n          <h2 \n            style=\"background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)\"\n          >Erros</h2>\n          <span class=\"number\" id=\"erros\">0</span>\n          <span class=\"label\">Quest\xF5es Incorretas</span>\n        </div>\n      </div>\n\n      <div class=\"progress-container\">\n        <div class=\"progress-label\">\n          <span>Sua Performance</span>\n          <span id=\"percentual\">0%</span>\n        </div>\n        <div class=\"progress-bar\">\n          <div class=\"progress-fill\" id=\"progressFill\" style=\"width: 80%\"></div>\n        </div>\n      </div>\n\n      <div class=\"summary\">\n        <p><strong>Total de Quest\xF5es:</strong> <span id=\"total\">10</span></p>\n        <p><strong>Taxa de Acerto:</strong> <span id=\"taxa\">0%</span></p>\n      </div>\n    </div>";
+  document.getElementById("acertos").textContent = acerts;
+  document.getElementById("erros").textContent = errors;
+  document.getElementById("total").textContent = 10;
+  document.getElementById("percentual").textContent = percentage + "%";
+  document.getElementById("taxa").textContent = percentage + "%";
+  document.getElementById("progressFill").style.width = percentage + "%";
+}
 
 /***/ }),
 
