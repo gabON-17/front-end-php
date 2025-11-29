@@ -376,8 +376,18 @@ footer a:hover {
   margin: 1rem 0;
   transition: all 0.3s ease;
   border: 1px solid var(--border-color);
-  width: 150%;
+}
+
+.card-index {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  margin: 1rem 0;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
   height: 100%;
+  width: 100%;
 }
 
 .card:hover {
@@ -503,7 +513,7 @@ tbody tr:last-child td {
   color: #92400e;
 }
 
-/* Responsividade */
+/* cardponsividade */
 @media (max-width: 768px) {
   body {
     padding: 10px;
