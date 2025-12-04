@@ -1,0 +1,72 @@
+/* ============================================
+   ESTILOS ESPECÍFICOS PARA PÁGINA DE ÁUDIO
+   ============================================ */
+
+/* Container de Controles de Áudio */
+.audio-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 200px;
+}
+
+/* Estilo do Botão de Áudio */
+#audio {
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  min-width: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+#audio::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+#audio:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+#audio:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-xl);
+}
+
+#audio:active {
+  transform: translateY(-1px);
+}
+
+/* Estados do Botão de Áudio */
+#audio.playing {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #059669 100%);
+}
+
+#audio.paused {
+  background: linear-gradient(135deg, var(--accent-color) 0%, #d97706 100%);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .audio-controls {
+    padding: 1.5rem;
+    min-height: 150px;
+  }
+
+  #audio {
+    width: 100%;
+    min-width: auto;
+    font-size: 1rem;
+    padding: 0.875rem 2rem;
+  }
+}
