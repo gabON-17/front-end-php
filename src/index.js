@@ -17,6 +17,7 @@ import {
   executeValidation,
   testa_form,
 } from "./js/student/students.validate.js";
+import { speak } from "./js/audio/audio.js";
 
 // ALUNOS
 if (
@@ -157,10 +158,3 @@ if (
     return;
   });
 }
-
-// document.addEventListener("click", (e) => {
-//   const resposta = response.forEach((value) => {
-//     if (value == e.target) return e.target;
-//     console.log(value);
-//   });
-// });
