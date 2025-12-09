@@ -9,17 +9,201 @@
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-var textInput = document.getElementById("text-audio");
-var speakButton = document.getElementById("audio");
-speakButton.addEventListener("click", function (e) {
-  var text = textInput.innerHTML;
-  var utterance = new SpeechSynthesisUtterance(text);
-  var voices = window.speechSynthesis.getVoices();
-  utterance.voice = voices.find(function (voice) {
-    return voice.lang === "pt-BR";
+function initAudio() {
+  var textInput = document.getElementById("text-audio");
+  var speakButton = document.getElementById("audio");
+  if (!textInput || !speakButton) return; // só inicializa na página de áudio
+
+  speakButton.addEventListener("click", function () {
+    var text = textInput.innerHTML;
+    var utterance = new SpeechSynthesisUtterance(text);
+    var voices = window.speechSynthesis.getVoices();
+    utterance.voice = voices.find(function (voice) {
+      return voice.lang === "pt-BR";
+    });
+    window.speechSynthesis.speak(utterance);
   });
-  window.speechSynthesis.speak(utterance);
-});
+}
+initAudio();
+
+/***/ }),
+
+/***/ "./src/js/chatbot/chatbot.js":
+/*!***********************************!*\
+  !*** ./src/js/chatbot/chatbot.js ***!
+  \***********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   initChatbot: () => (/* binding */ initChatbot)
+/* harmony export */ });
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+var CHAT_API_URL = "http://localhost:3000/";
+var selectors = {
+  page: "#chatbot-page",
+  form: "#chat-form",
+  input: "#chat-input",
+  messages: "#chat-messages",
+  status: "#chat-status",
+  sendButton: "#chat-send"
+};
+var roles = {
+  user: "Você",
+  bot: "Assistente",
+  error: "Sistema"
+};
+function ensureElements() {
+  var elements = {
+    page: document.querySelector(selectors.page),
+    form: document.querySelector(selectors.form),
+    input: document.querySelector(selectors.input),
+    messages: document.querySelector(selectors.messages),
+    status: document.querySelector(selectors.status),
+    sendButton: document.querySelector(selectors.sendButton)
+  };
+  return Object.values(elements).every(Boolean) ? elements : null;
+}
+function appendMessage(container, text) {
+  var _roles$type;
+  var type = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "bot";
+  var li = document.createElement("li");
+  li.classList.add("message", "message--".concat(type));
+  var sender = document.createElement("strong");
+  sender.classList.add("message__sender");
+  sender.textContent = (_roles$type = roles[type]) !== null && _roles$type !== void 0 ? _roles$type : roles.bot;
+  var content = document.createElement("p");
+  content.classList.add("message__text");
+  content.textContent = text;
+  li.appendChild(sender);
+  li.appendChild(content);
+  container.appendChild(li);
+  container.scrollTop = container.scrollHeight;
+}
+function requestAnswer(_x) {
+  return _requestAnswer.apply(this, arguments);
+}
+function _requestAnswer() {
+  _requestAnswer = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2(message) {
+    var payload, response, errorText, data, _t2;
+    return _regenerator().w(function (_context2) {
+      while (1) switch (_context2.p = _context2.n) {
+        case 0:
+          payload = {
+            message: message
+          };
+          _context2.p = 1;
+          _context2.n = 2;
+          return fetch(CHAT_API_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+          });
+        case 2:
+          response = _context2.v;
+          if (response.ok) {
+            _context2.n = 4;
+            break;
+          }
+          _context2.n = 3;
+          return response.text();
+        case 3:
+          errorText = _context2.v;
+          console.error("[chatbot] Falha na API:", response.status, response.statusText, errorText);
+          throw new Error("Falha ao consultar a API (".concat(response.status, "): ").concat(errorText || "erro"));
+        case 4:
+          _context2.n = 5;
+          return response.json();
+        case 5:
+          data = _context2.v;
+          console.log("[chatbot] Resposta da API:", data);
+          return _context2.a(2, (data === null || data === void 0 ? void 0 : data.answer) || (data === null || data === void 0 ? void 0 : data.message) || (data === null || data === void 0 ? void 0 : data.response) || JSON.stringify(data, null, 2));
+        case 6:
+          _context2.p = 6;
+          _t2 = _context2.v;
+          if (!(_t2.message.includes("CORS") || _t2.name === "TypeError")) {
+            _context2.n = 7;
+            break;
+          }
+          throw new Error("Erro de CORS: O servidor não permite requisições desta origem. " + "Configure o backend para aceitar requisições de http://127.0.0.1:5500 " + "adicionando os headers Access-Control-Allow-Origin.");
+        case 7:
+          throw _t2;
+        case 8:
+          return _context2.a(2);
+      }
+    }, _callee2, null, [[1, 6]]);
+  }));
+  return _requestAnswer.apply(this, arguments);
+}
+function updateStatus(statusElement, text) {
+  statusElement.textContent = text;
+}
+function toggleForm(formElements, disabled) {
+  formElements.input.disabled = disabled;
+  formElements.sendButton.disabled = disabled;
+}
+function initChatbot() {
+  var elements = ensureElements();
+  if (!elements) return;
+  updateStatus(elements.status, "Pronto para conversar!");
+  elements.form.addEventListener("submit", /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee(event) {
+      var message, answer, _t;
+      return _regenerator().w(function (_context) {
+        while (1) switch (_context.p = _context.n) {
+          case 0:
+            event.preventDefault();
+            message = elements.input.value.trim();
+            if (message) {
+              _context.n = 1;
+              break;
+            }
+            return _context.a(2);
+          case 1:
+            appendMessage(elements.messages, message, "user");
+            elements.input.value = "";
+            elements.input.focus();
+            updateStatus(elements.status, "Buscando resposta...");
+            toggleForm(elements, true);
+            _context.p = 2;
+            _context.n = 3;
+            return requestAnswer(message);
+          case 3:
+            answer = _context.v;
+            appendMessage(elements.messages, answer, "bot");
+            updateStatus(elements.status, "Pronto para a próxima pergunta.");
+            _context.n = 5;
+            break;
+          case 4:
+            _context.p = 4;
+            _t = _context.v;
+            appendMessage(elements.messages, _t.message, "error");
+            updateStatus(elements.status, "Não foi possível responder. Tente novamente.");
+          case 5:
+            _context.p = 5;
+            toggleForm(elements, false);
+            return _context.f(5);
+          case 6:
+            return _context.a(2);
+        }
+      }, _callee, null, [[2, 4, 5, 6]]);
+    }));
+    return function (_x2) {
+      return _ref.apply(this, arguments);
+    };
+  }());
+  elements.input.addEventListener("keydown", function (event) {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
+      elements.form.requestSubmit();
+    }
+  });
+}
 
 /***/ }),
 
@@ -85,19 +269,16 @@ function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present,
 function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
-function apiPOST(_x) {
+function apiPOST(_x, _x2) {
   return _apiPOST.apply(this, arguments);
 }
 function _apiPOST() {
-  _apiPOST = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee(url) {
-    var body,
-      data,
-      _args = arguments;
+  _apiPOST = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee(url, body) {
+    var data;
     return _regenerator().w(function (_context) {
       while (1) switch (_context.n) {
         case 0:
-          body = _args.length > 1 && _args[1] !== undefined ? _args[1] : undefined;
-          if (!(!body || !url)) {
+          if (!(!body && !url)) {
             _context.n = 1;
             break;
           }
@@ -243,37 +424,45 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var questionHeader = document.getElementsByName("header-quiz")[0];
-var questionText = document.getElementById("question");
-var responsesInput = document.getElementsByName("labelResponse");
-var formQuiz = document.getElementById("form_quiz");
-var button = document.getElementsByClassName("btn-primary")[0];
-var question = 0;
-var resClient = [];
-document.addEventListener("DOMContentLoaded", function (e) {
-  questionHeader.textContent = "Questão 1";
-  questionText.textContent = _utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[0].quetion;
-  for (var i = 0; i < 4; i++) {
-    responsesInput[i].innerHTML = "<input type='radio' name='response' class='required' value='".concat(_utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].responses[i], "' /> ") + _utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].responses[i] + "<br>";
+function initQuiz() {
+  var questionHeader = document.getElementsByName("header-quiz")[0];
+  var questionText = document.getElementById("question");
+  var responsesInput = document.getElementsByName("labelResponse");
+  var formQuiz = document.getElementById("form_quiz");
+  var button = document.getElementsByClassName("btn-primary")[0];
+
+  // Se os elementos não existem, não inicializa (evita erros em outras páginas)
+  if (!questionHeader || !questionText || !(responsesInput !== null && responsesInput !== void 0 && responsesInput.length) || !formQuiz || !button) {
+    return;
   }
-});
-formQuiz.addEventListener("submit", function (e) {
-  e.preventDefault();
-  question++;
-  var response = (0,_utils_getResponse_js__WEBPACK_IMPORTED_MODULE_0__.getResponse)(_utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question - 1].correctResponse);
-  resClient.push(response);
-  if (question == 9) {
-    button.value = "✅ Enviar";
-  } else if (question >= 10) {
-    question--;
-    (0,_utils_renderResult_js__WEBPACK_IMPORTED_MODULE_2__.renderResult)(resClient, document.getElementById("body_quiz"));
-  }
-  questionHeader.textContent = "Quest\xE3o ".concat(question + 1);
-  questionText.textContent = _utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].quetion;
-  for (var i = 0; i < 4; i++) {
-    responsesInput[i].innerHTML = "<input type='radio' name='response' class='required' value='".concat(_utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].responses[i], "' /> ") + _utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].responses[i] + "<br>";
-  }
-});
+  var question = 0;
+  var resClient = [];
+  document.addEventListener("DOMContentLoaded", function () {
+    questionHeader.textContent = "Questão 1";
+    questionText.textContent = _utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[0].quetion;
+    for (var i = 0; i < 4; i++) {
+      responsesInput[i].innerHTML = "<input type='radio' name='response' class='required' value='".concat(_utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].responses[i], "' /> ") + _utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].responses[i] + "<br>";
+    }
+  });
+  formQuiz.addEventListener("submit", function (e) {
+    e.preventDefault();
+    question++;
+    var response = (0,_utils_getResponse_js__WEBPACK_IMPORTED_MODULE_0__.getResponse)(_utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question - 1].correctResponse);
+    resClient.push(response);
+    if (question == 9) {
+      button.value = "✅ Enviar";
+    } else if (question >= 10) {
+      question--;
+      (0,_utils_renderResult_js__WEBPACK_IMPORTED_MODULE_2__.renderResult)(resClient, document.getElementById("body_quiz"));
+    }
+    questionHeader.textContent = "Quest\xE3o ".concat(question + 1);
+    questionText.textContent = _utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].quetion;
+    for (var i = 0; i < 4; i++) {
+      responsesInput[i].innerHTML = "<input type='radio' name='response' class='required' value='".concat(_utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].responses[i], "' /> ") + _utils_questions_js__WEBPACK_IMPORTED_MODULE_1__.quizquetionsIA[question].responses[i] + "<br>";
+    }
+  });
+}
+initQuiz();
 
 /***/ }),
 
@@ -829,6 +1018,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_teacher_teacher_validate_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./js/teacher/teacher.validate.js */ "./src/js/teacher/teacher.validate.js");
 /* harmony import */ var _js_student_students_validate_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./js/student/students.validate.js */ "./src/js/student/students.validate.js");
 /* harmony import */ var _js_audio_audio_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./js/audio/audio.js */ "./src/js/audio/audio.js");
+/* harmony import */ var _js_chatbot_chatbot_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./js/chatbot/chatbot.js */ "./src/js/chatbot/chatbot.js");
 function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
@@ -836,6 +1026,7 @@ function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present,
 function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+
 
 
 
@@ -1095,6 +1286,13 @@ if (window.location.href === "http://127.0.0.1:5500/public/pages/visualizar_curs
       return _ref6.apply(this, arguments);
     };
   }());
+}
+var shouldInitChat = window.location.pathname.endsWith("/chatbot.html") || document.querySelector("#chatbot-page");
+if (shouldInitChat) {
+  document.addEventListener("DOMContentLoaded", function () {
+    console.log("[chatbot] Inicializando página de chat");
+    (0,_js_chatbot_chatbot_js__WEBPACK_IMPORTED_MODULE_11__.initChatbot)();
+  });
 }
 })();
 

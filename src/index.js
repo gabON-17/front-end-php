@@ -18,6 +18,7 @@ import {
   testa_form,
 } from "./js/student/students.validate.js";
 import { speak } from "./js/audio/audio.js";
+import { initChatbot } from "./js/chatbot/chatbot.js";
 
 // ALUNOS
 if (
@@ -156,5 +157,16 @@ if (
       }
     }
     return;
+  });
+}
+
+const shouldInitChat =
+  window.location.pathname.endsWith("/chatbot.html") ||
+  document.querySelector("#chatbot-page");
+
+if (shouldInitChat) {
+  document.addEventListener("DOMContentLoaded", () => {
+    console.log("[chatbot] Inicializando página de chat");
+    initChatbot();
   });
 }

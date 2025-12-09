@@ -1,5 +1,5 @@
-export async function apiPOST(url, body = undefined) {
-  if (!body || !url) return false;
+export async function apiPOST(url, body) {
+  if (!body && !url) return false;
 
   const data = await fetch(url, {
     method: "POST",
